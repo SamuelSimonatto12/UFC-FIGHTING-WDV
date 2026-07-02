@@ -68,7 +68,7 @@ body {
 .banner {
   height: var(--tamanho-banner);
   color: white;
-  background-image: url('../assets/imgs/cinturao.jpg');
+  background-image: url('../assets/imgs/anderson.jpg');
   background-size: cover;
   align-items: center;
   justify-content: center;
@@ -78,12 +78,6 @@ body {
   justify-content: center;
   align-items: center;
   height: 90%;
-  text-align: center;
-  background: rgba(0, 0, 0, 0.7);
-  padding: 50px;
-  border-left: 5px solid #DAA520;
-  max-width: 100%;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 .banner .container p {
