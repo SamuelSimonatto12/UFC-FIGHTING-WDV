@@ -1,58 +1,52 @@
--- Arquivo de apoio, caso você queira criar tabelas como as aqui criadas para a API funcionar.
--- Você precisa executar os comandos no banco de dados para criar as tabelas,
--- ter este arquivo aqui não significa que a tabela em seu BD estará como abaixo!
-
-/*
-comandos para mysql server
-*/
-
-CREATE DATABASE aquatech;
-
-USE aquatech;
-
-CREATE TABLE empresa (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	razao_social VARCHAR(50),
-	cnpj CHAR(14),
-	codigo_ativacao VARCHAR(50)
-);
+create database UFCWDV;
+use UFCWDV;
 
 CREATE TABLE usuario (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	nome VARCHAR(50),
-	email VARCHAR(50),
-	senha VARCHAR(50),
-	fk_empresa INT,
-	FOREIGN KEY (fk_empresa) REFERENCES empresa(id)
+    id_usuario INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100),
+    email VARCHAR(100),
+    senha VARCHAR(100),
+    dataCadastro DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE aviso (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	titulo VARCHAR(100),
-	descricao VARCHAR(150),
-	fk_usuario INT,
-	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
+CREATE TABLE lutadores (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100),
+    forca INT,
+    velocidade INT,
+    finalizacao INT,
+    defesa INT
 );
 
-create table aquario (
-/* em nossa regra de negócio, um aquario tem apenas um sensor */
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	descricao VARCHAR(300),
-	fk_empresa INT,
-	FOREIGN KEY (fk_empresa) REFERENCES empresa(id)
+CREATE TABLE comparacoes (
+    id_comparacoes INT PRIMARY KEY AUTO_INCREMENT,
+    fk_usuario INT,
+    id_lutador1 INT,
+    id_lutador2 INT,
+    vencedor VARCHAR(100),
+    pontosLutador1 INT,
+    pontosLutador2 INT,
+    data DATETIME DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT fkComparacaoUsuario
+        FOREIGN KEY (fk_usuario)
+        REFERENCES usuario(id_usuario),
+
+    CONSTRAINT fkComparacaoLutador1
+        FOREIGN KEY (id_lutador1)
+        REFERENCES lutadores(id),
+
+    CONSTRAINT fkComparacaoLutador2
+        FOREIGN KEY (id_lutador2)
+        REFERENCES lutadores(id)
 );
 
-/* esta tabela deve estar de acordo com o que está em INSERT de sua API do arduino - dat-acqu-ino */
 
-create table medida (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	temperatura DECIMAL,
-	momento DATETIME,
-	fk_aquario INT,
-	FOREIGN KEY (fk_aquario) REFERENCES aquario(id)
-);
-
-insert into empresa (razao_social, codigo_ativacao) values ('Empresa 1', 'ED145B');
-insert into empresa (razao_social, codigo_ativacao) values ('Empresa 2', 'A1B2C3');
-insert into aquario (descricao, fk_empresa) values ('Aquário de Estrela-do-mar', 1);
-insert into aquario (descricao, fk_empresa) values ('Aquário de Peixe-dourado', 2);
+INSERT INTO lutadores (nome, forca, velocidade, finalizacao, defesa)
+VALUES
+('Anderson Silva',8,10,8,7),
+('Jon Jones',9,8,9,10),
+('Khabib Nurmagomedov',8,8,10,9),
+('Georges St-Pierre',8,9,8,10),
+('Demetrious Johnson',6,10,9,9),
+('Islam Makhachev',8,8,10,9);
