@@ -1,0 +1,205 @@
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #111;
+    color: white;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: black;
+}
+
+header h1 {
+    font-family: 'Fugaz One', sans-serif;
+    font-size: 32px;
+}
+
+header span {
+    color: gold;
+}
+
+header a {
+    text-decoration: none;
+    color: #bf953f;
+    font-family: 'Fugaz One', sans-serif;
+    text-transform: uppercase;
+    font-size: 14px;
+    padding: 8px 16px;
+    border: 1px solid #bf953f;
+    border-radius: 5px;
+    align-self: center;
+    transition: .3s;
+}
+
+header a:hover {
+    background: #bf953f;
+    color: black;
+}
+
+.arena {
+    width: 100%;
+    background-image: url("../img/octogono_preto.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+
+.painel-escolha {
+    width: 80%;
+    background: rgba(0,0,0,.7);
+    border-radius: 12px;
+    text-align: center;
+    padding: 25px;
+    box-shadow: 0 0 15px black;
+}
+
+.painel-escolha h2 {
+    color: gold;
+    font-family: 'Fugaz One', sans-serif;
+    margin-bottom: 25px;
+}
+
+.selects {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 30px;
+}
+
+select {
+    width: 220px;
+    padding: 10px;
+    border-radius: 8px;
+    background: #2c2c2c;
+    color: #fcf6ba;
+    border: 1px solid #aa771c;
+}
+
+.vs-select {
+    font-size: 40px;
+    color: gold;
+    font-family: 'Fugaz One', sans-serif;
+}
+
+button {
+    background: #bf953f;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 30px;
+    font-weight: bold;
+    transition: .4s;
+}
+
+
+.comparacao {
+    margin-top: 60px;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+}
+
+.lutador {
+    width: 260px;
+    background: rgba(0,0,0,.7);
+    border-radius: 12px;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 0 15px black;
+}
+
+.lutador img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.lutador h2 {
+    color: gold;
+    margin-top: 15px;
+    font-family: 'Fugaz One', sans-serif;
+}
+
+.lutador p {
+    color: #ccc;
+    margin-top: 10px;
+}
+
+.vs-centro h1 {
+    color: gold;
+    font-size: 60px;
+}
+
+.resultado-card {
+    width: 60%;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 12px;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    box-shadow: 0 0 15px black;
+}
+
+.resultado-card h2 {
+    color: gold;
+    font-family: 'Fugaz One', sans-serif;
+    margin-bottom: 15px;
+}
+
+#resultado {
+    color: rgb(10, 219, 21);
+    font-size: 34px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.atributos {
+    width: 70%;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 12px;
+    padding: 30px;
+    margin-top: 40px;
+    box-shadow: 0 0 15px black;
+}
+
+.atributo {
+    margin-bottom: 30px;
+}
+
+.atributo span {
+    display: block;
+    color: gold;
+    font-family: 'Fugaz One', sans-serif;
+    margin-bottom: 10px;
+}
+
+.lados {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.barra {
+    width: 100%;
+    height: 15px;
+    background: black;
+    border-radius: 10px;
+}
+
+.valor {
+    width: 0%;
+    height: 100%;
+    background: #d4af37;
+    border-radius: 10px;
+    transition: width .5s;
+}

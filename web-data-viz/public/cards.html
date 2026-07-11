@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UFC Fighting | Comparação</title>
+    <link rel="stylesheet" href="css/card.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <h1><span>UFC</span> FIGHTING</h1>
+        <a href="dashboard/dashboard.html">Fight History</a>
+    </header>
+
+    <main class="arena">
+
+        <section class="painel-escolha">
+
+            <h2>ESCOLHA OS LUTADORES</h2>
+
+            <div class="selects">
+
+                <select id="ipt_lutador1">
+                    <option value="1">Anderson Silva</option>
+                    <option value="2">Jon Jones</option>
+                    <option value="3">Khabib Nurmagomedov</option>
+                    <option value="4">Georges St-Pierre</option>
+                    <option value="5">Demetrious Johnson</option>
+                    <option value="6">Islam Makhachev</option>
+                </select>
+
+                <div class="vs-select">VS</div>
+
+                <select id="ipt_lutador2">
+                    <option value="1">Anderson Silva</option>
+                    <option value="2">Jon Jones</option>
+                    <option value="3">Khabib Nurmagomedov</option>
+                    <option value="4">Georges St-Pierre</option>
+                    <option value="5">Demetrious Johnson</option>
+                    <option value="6">Islam Makhachev</option>
+                </select>
+
+            </div>
+
+            <button onclick="trocarImagem()">COMPARAR</button>
+
+        </section>
+
+        <section class="comparacao">
+
+            <div class="lutador">
+
+                <img id="img1">
+
+                <h2 id="nome1"></h2>
+
+                <p id="info1"></p>
+
+            </div>
+
+            <div class="vs-centro">
+
+                <h1>VS</h1>
+
+            </div>
+
+            <div class="lutador">
+
+                <img id="img2">
+
+                <h2 id="nome2"></h2>
+
+                <p id="info2"></p>
+
+            </div>
+
+        </section>
+
+        <section class="resultado-card">
+
+            <h2>RESULTADO</h2>
+
+            <h1 id="resultado"></h1>
+
+        </section>
+
+        <section class="atributos">
+
+            <div class="atributo">
+
+                <span>FORÇA</span>
+
+                <div class="lados">
+
+                    <div class="barra">
+                        <div id="forca1" class="valor"></div>
+                    </div>
+
+                    <div class="barra">
+                        <div id="forca2" class="valor"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="atributo">
+
+                <span>VELOCIDADE</span>
+
+                <div class="lados">
+
+                    <div class="barra">
+                        <div id="vel1" class="valor"></div>
+                    </div>
+
+                    <div class="barra">
+                        <div id="vel2" class="valor"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="atributo">
+
+                <span>FINALIZAÇÃO</span>
+
+                <div class="lados">
+
+                    <div class="barra">
+                        <div id="fin1" class="valor"></div>
+                    </div>
+
+                    <div class="barra">
+                        <div id="fin2" class="valor"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="atributo">
+
+                <span>DEFESA</span>
+
+                <div class="lados">
+
+                    <div class="barra">
+                        <div id="def1" class="valor"></div>
+                    </div>
+
+                    <div class="barra">
+                        <div id="def2" class="valor"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
+<script src="js/atualizar.js"></script>
+<script>
+    let lutadores = [
+        {
+            nome: "Anderson Silva",
+            vitorias: 34,
+            derrotas: 11,
+            forca: 8,
+            velocidade: 10,
+            finalizacao: 8,
+            defesa: 7,
+            img: "assets/imgs/anderson.webp"
+        },
+        {
+            nome: "Jon Jones",
+            vitorias: 28,
+            derrotas: 1,
+            forca: 9,
+            velocidade: 8,
+            finalizacao: 9,
+            defesa: 10,
+            img: "assets/imgs/jon.avif"
+        },
+        {
+            nome: "Khabib Nurmagomedov",
+            vitorias: 29,
+            derrotas: 0,
+            forca: 8,
+            velocidade: 8,
+            finalizacao: 10,
+            defesa: 9,
+            img: "assets/imgs/khabib.avif"
+        },
+        {
+            nome: "Georges St-Pierre",
+            vitorias: 26,
+            derrotas: 2,
+            forca: 8,
+            velocidade: 9,
+            finalizacao: 8,
+            defesa: 10,
+            img: "assets/imgs/gsp.jpg"
+        },
+        {
+            nome: "Demetrious Johnson",
+            vitorias: 25,
+            derrotas: 4,
+            forca: 6,
+            velocidade: 10,
+            finalizacao: 9,
+            defesa: 9,
+            img: "assets/imgs/dj.jpg"
+        },
+        {
+            nome: "Islam Makhachev",
+            vitorias: 28,
+            derrotas: 1,
+            forca: 8,
+            velocidade: 8,
+            finalizacao: 10,
+            defesa: 9,
+            img: "assets/imgs/islam.avif"
+        }
+    ];
+    function trocarImagem() {
+
+        let l1 = ipt_lutador1.value;
+        let l2 = ipt_lutador2.value;
+
+        if (l1 == l2) {
+            resultado.innerHTML =
+                "⚠️ Escolha lutadores diferentes!";
+            return;
+        }
+
+        let f1 = lutadores[l1 - 1];
+        let f2 = lutadores[l2 - 1];
+
+        img1.src = f1.img;
+        img2.src = f2.img;
+
+        nome1.innerText = f1.nome;
+        nome2.innerText = f2.nome;
+
+        info1.innerText = `${f1.vitorias} vitórias - ${f1.derrotas} derrotas`;
+        info2.innerText = `${f2.vitorias} vitórias - ${f2.derrotas} derrotas`;
+
+        atualizarBarra("forca1", "forca2", f1.forca, f2.forca);
+        atualizarBarra("vel1", "vel2", f1.velocidade, f2.velocidade);
+        atualizarBarra("fin1", "fin2", f1.finalizacao, f2.finalizacao);
+        atualizarBarra("def1", "def2", f1.defesa, f2.defesa);
+
+        let total1 =
+            f1.forca +
+            f1.velocidade +
+            f1.finalizacao +
+            f1.defesa;
+
+        let total2 =
+            f2.forca +
+            f2.velocidade +
+            f2.finalizacao +
+            f2.defesa;
+
+        let vencedor = "";
+
+        if (total1 > total2) {
+
+            vencedor = f1.nome;
+
+            resultado.innerHTML =
+                `🏆 ${f1.nome} venceu a comparação!`;
+
+        } else if (total2 > total1) {
+
+            vencedor = f2.nome;
+
+            resultado.innerHTML =
+                `🏆 ${f2.nome} venceu a comparação!`;
+
+        } else {
+
+            vencedor = "Empate";
+
+            resultado.innerHTML = "Empate!";
+        }
+
+        fetch("/escolhas/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                usuarioServer: sessionStorage.ID_USUARIO,
+                lutador1Server: l1,
+                lutador2Server: l2,
+                vencedorServer: vencedor,
+                pontos1Server: total1,
+                pontos2Server: total2
+            })
+        })
+            .then(function (resposta) {
+                if (resposta.ok) {
+                    console.log("Comparação salva!");
+                } else {
+                    console.log("Erro ao salvar!");
+                }
+            })
+            .catch(function (erro) {
+                console.log(erro);
+            });
+    }
+
+</script>
