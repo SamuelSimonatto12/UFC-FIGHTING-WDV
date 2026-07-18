@@ -1,11 +1,11 @@
-/* pagina mural */
-
 @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 body {
   margin: 0;
   padding: 0;
   font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0d0d0d;
+  overflow-x: hidden;
 }
 
 .label-captura {
@@ -44,7 +44,7 @@ body {
 
 .dash-right .avisos .div-form textarea {
   width: 95%;
-  border: 3px solid #e6005a;
+  border: 3px solid #d4af37;
   background-color: white;
   border-radius: 5px;
 }
@@ -57,8 +57,8 @@ body {
   font-weight: 600;
   font-size: 18px;
   padding: 10px 15px;
-  color: white;
-  background-color: #e6005a;
+  color: black;
+  background-color: #d4af37;
   width: 120px;
 }
 
@@ -70,8 +70,8 @@ body {
   font-weight: 600;
   font-size: 14px;
   padding: 5px 8px;
-  color: white;
-  background-color: #e6005a;
+  color: black;
+  background-color: #d4af37;
   width: 80px;
 }
 
@@ -82,7 +82,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
-  border-bottom: 3px solid #e6005a;
+  border-bottom: 3px solid #d4af37;
   padding: 20px;
 }
 
@@ -95,7 +95,7 @@ body {
 }
 
 .div-results .feed-container {
-  background-color: #212124;
+  background-color: #1a1a1a;
   border-radius: 5px;
   margin-bottom: 80px;
 }
@@ -109,30 +109,17 @@ body {
   margin-left: 30px;
 }
 
-/* pagina graficos */
-
 .dash-header {
-  background-color: #212124;
-}
-
-.dash {
-  width: 80%;
-  position: relative;
-  top: 0;
-  left: 20%;
-  background-color: #161618;
-  height: 100vh;
-  overflow: auto;
+  background-color: #1a1a1a;
 }
 
 .area-parametros-alerta {
-  /* border: 2px solid pink; */
   display: flex;
   flex-direction: column;
   width: 70%;
   margin: auto;
   margin-top: 10px;
-  background-color: #212124;
+  background-color: #1a1a1a;
 }
 
 .area-parametros-alerta .titulo-legenda {
@@ -152,7 +139,7 @@ body {
   text-align: center;
   height: 80px;
   display: flex;
-  flex-direction: column;
+  flex-direcao: column;
   justify-content: center;
   align-self: center;
 }
@@ -171,7 +158,7 @@ body {
 }
 
 .perigo-quente {
-  background-color: #ff7043;
+  background-color: #d4af37;
 }
 
 .alerta-frio {
@@ -179,7 +166,7 @@ body {
 }
 
 .alerta-quente {
-  background-color: #ffee58;
+  background-color: #b8860b;
 }
 
 .ideal {
@@ -203,10 +190,8 @@ body {
   width: fit-content;
   flex-wrap: wrap;
   display: flex;
-  /* text-align: center; */
   height: 180px;
-  /* justify-content: right; */
-  background-color: #212124;
+  background-color: #1a1a1a;
   font-size: 20px;
 }
 
@@ -236,7 +221,6 @@ body {
   width: 100%;
 }
 
-
 .cards h1 {
   font-size: 22px;
   border-bottom: solid white 1px;
@@ -258,20 +242,9 @@ body {
   display: inline-block;
 }
 
-.btns-dash {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 30px;
-  flex-wrap: wrap;
-  padding: 0 30% 0 30%;
-}
 
-.graph {
-  width: 70%;
-  margin: auto;
-  padding-top: 10px;
-}
+
+
 
 .tituloGraficos {
   color: rgb(216, 216, 216);
@@ -285,50 +258,42 @@ body {
   font-weight: 600;
   font-size: 18px;
   padding: 10px 15px;
-  color: #e6005a;
+  color: #d4af37;
   background-color: white;
   margin: 5px;
   border-radius: 3px;
-  cursor: pointer
+  cursor: pointer;
 }
 
 .btn-pink {
-  color: white;
-  background-color: #e6005a;
+  color: black;
+  background-color: #d4af37;
 }
 
 .btn-white {
-  color: #e6005a;
+  color: #d4af37;
   background-color: white;
-
 }
 
 .label-captura {
   height: 80px;
 }
 
-.display-none {
-  display: none;
-}
+
 
 .display-flex {
   display: flex;
 }
 
-.display-block {
-  display: block;
-}
+
 
 canvas {
   width: 100% !important;
   height: 100% !important;
 }
 
-/* PAGINA DOS GRÁFICOS 2023-2026 */
-
 .janela {
   display: flex;
-  /* width: 100vw; */
 }
 
 .header-left a {
@@ -347,15 +312,15 @@ canvas {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  border-right: 3px solid #32b9cd;
-  background-color: #212124;
+  border-right: 3px solid #d4af37;
+  background-color: #1a1a1a;
 }
 
 .dash-right {
   display: flex;
   width: 70%;
   height: fit-content;
-  background-color: #161618;
+  background-color: #0d0d0d;
   position: relative;
   top: 0;
   left: 25%;
@@ -364,7 +329,7 @@ canvas {
 }
 
 .header-left h1 {
-  color: #32b9cd;
+  color: #d4af37;
 }
 
 .hello {
@@ -374,7 +339,7 @@ canvas {
 }
 
 .hello h3 {
-  color: #e3b062;
+  color: #d4af37;
   font-weight: 300;
   font-size: 1.2rem;
 }
@@ -385,8 +350,8 @@ canvas {
 
 .btn-nav {
   width: 40%;
-  color: white;
-  background-color: #e6005a;
+  color: black;
+  background-color: #d4af37;
   border-radius: 5px;
   text-align: center;
   padding: 2% 5%;
@@ -395,14 +360,14 @@ canvas {
 .btn-nav-white {
   width: 40%;
   background-color: white;
-  border: 3px solid #e6005a;
+  border: 3px solid #d4af37;
   border-radius: 5px;
   text-align: center;
   padding: 2% 5%;
 }
 
 .btn-nav-white h3 {
-  color: #e6005a;
+  color: #d4af37;
   padding: 0;
   margin: 0;
 }
@@ -417,11 +382,114 @@ canvas {
   margin: 0;
   padding: 0;
   width: 20%;
-  background-color: #32b9cd;
+  background-color: #8b0000;
   color: white;
   border-radius: 10px;
   text-align: center;
   padding: 10px 15px;
   margin-bottom: 100px;
   cursor: pointer;
+}
+
+.kpis {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+.card-kpi {
+    width: 280px;
+    min-height: 140px;
+    background-color: #111;
+    border: 2px solid #d4af37;
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.card-kpi h3 {
+    color: white;
+}
+
+.card-kpi span {
+    color: #d4af37;
+    font-size: 35px;
+}
+
+
+.dash {
+    margin-left: 320px;
+    padding: 40px;
+    width: calc(100% - 320px);
+    min-height: 100vh;
+    background-color: #080808;
+}
+
+
+.kpis {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+
+.card-kpi {
+    width: 230px;
+    height: 130px;
+    background-color: #111;
+    border: 2px solid #d4af37;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.card-kpi h3 {
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+
+.card-kpi span {
+    color: #d4af37;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+
+.grafico-container {
+    width: 90%;
+    height: 450px;
+    margin: auto;
+    background-color: #111;
+    border: 2px solid #d4af37;
+    border-radius: 15px;
+    padding: 30px;
+}
+
+
+.grafico-container h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+#graficoEscolhas {
+    width: 100% !important;
+    height: 350px !important;
 }

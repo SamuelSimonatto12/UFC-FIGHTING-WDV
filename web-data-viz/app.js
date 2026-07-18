@@ -18,6 +18,7 @@ var app = express();
 
 var usuarioRouter = require("./src/routes/usuarios");
 var escolhasRouter = require("./src/routes/escolhas");
+var dashRouter = require("./src/routes/dash");
 
 
 app.use(express.json());
@@ -28,6 +29,7 @@ app.use(cors());
 
 app.use("/usuarios", usuarioRouter);
 app.use("/escolhas", escolhasRouter);
+app.use("/dash", dashRouter);
 
 
 app.listen(PORTA_APP, function () {
